@@ -15,7 +15,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class Company<T,S>{
+public class Company{
+  // todo fix generic types of company class
     private List<T> employeeList;
     private List<S> departmentList;
 
@@ -23,25 +24,11 @@ public class Company<T,S>{
         //todo check director and manager department is same if class type is worker
         //todo check manager department is same if class type is director
         if (employee instanceof Worker){
-            if (((Worker) employee).getDirector() == null){
-                System.out.println("worker must have director");
-                return false;
-            }
-            if (!((Worker) employee).getDepartment().getName().equals
-                    (((Worker) employee).getDirector().getDepartment().getName())){
-                System.out.println("worker department and director's department must be same");
-            }
+           //todo check worker director is present
         }else if (employee instanceof Director){
-            if (((Director) employee).getManager() == null){
-                System.out.println("director must have manager");
-                return false;
-            }
-            if (!((Director) employee).getDepartment().getName().equals
-                    (((Director) employee).getManager().getDepartment().getName())){
-                System.out.println("director department and manager's department must be same");
-            }
+            //todo check director manager is present
         }
-        validateEmployeeInformation((Employee) employee);
+        validateEmployeeInformation(employee);
         employeeList.add(employee);
         return true;
     }
@@ -53,14 +40,8 @@ public class Company<T,S>{
     }
 
     public boolean validateDepartmentInformation(Department department){
-        if (department.getName() == null){
-            System.out.println("Department name can not be null");
-            return false;
-        }
-        if (department.getCode() == null){
-            System.out.println("Department code can not be null");
-            return false;
-        }
+        //todo check variables is not null and suitable
+        // name , code
         return true;
     }
 
@@ -69,24 +50,8 @@ public class Company<T,S>{
             System.out.println("Department can not be null");
             return false;
         }
-
-        //todo check variables is not null and suitable
-
-        /*
-
-        if (employee.getName() == null){
-            System.out.println("Name can not be null");
-            return false;
-        }
-        if (employee.getSurName() == null){
-            System.out.println("Surname can not be null");
-            return false;
-        }
-        if (employee.getWorkingType() == null){
-            System.out.println("working type can not be null");
-            return false;
-        }
-         */
+        //todo check rest of variables is not null and suitable
+        // name, surName, department, workingType, shift
         return true;
     }
 }

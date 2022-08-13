@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Manager extends Employee {
+public class Manager{
+    //todo implement inheritance
 
 }

@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Worker extends Employee{
+public class Worker{
+    //todo implement inheritance
     private Director director;
 }
