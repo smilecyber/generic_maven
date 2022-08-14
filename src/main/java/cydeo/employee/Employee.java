@@ -5,7 +5,7 @@ import cydeo.department.Department;
 import cydeo.enums.WorkingType;
 
 
-public abstract class Employee {
+public class Employee {
     private Department department;
     private WorkingType workingType;
     private String name;
